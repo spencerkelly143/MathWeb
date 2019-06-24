@@ -4,7 +4,8 @@ import '../ui.css'
 export default class Menu extends React.Component {
   constructor(props) {
     super(props)
-    let setup = this.props.item.map( p => [p, p === this.props.item[0] ? "selected" : "unselected"]);
+
+    let setup = this.props.item.map( p => [p, p === this.props.originalPath ? "selected" : "unselected"]);
     this.state = {
       data: setup
     }
@@ -12,6 +13,7 @@ export default class Menu extends React.Component {
   handleClick = (e) => {
     let setup = this.props.item.map( p => [p, p === e.target.textContent ? "selected" : "unselected"]);
     this.setState({data: setup});
+    this.props.handleMenu(e.target.textContent);
   }
   render(){
     return(

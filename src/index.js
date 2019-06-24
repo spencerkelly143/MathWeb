@@ -6,5 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import $ from 'jquery';
 
 import App from './App.js';
+import Router from './Router.js'
+import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter> <Router /> </BrowserRouter>, document.getElementById('root'));
